@@ -1,200 +1,204 @@
-```html
 <!DOCTYPE html>
 <html lang="id">
-
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Untuk Mbak Kikiw 🌸</title>
+    <title>Untuk Mbak KiwKiw 💗</title>
 
     <!-- Font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
-
+    <!-- CSS -->
     <link rel="stylesheet" href="style.css">
-
 </head>
-
 <body>
 
-    <!-- Background -->
-    <div class="background">
-        <div class="blob blob1"></div>
-        <div class="blob blob2"></div>
-        <div class="blob blob3"></div>
+<!-- ===================== -->
+<!-- Floating Flowers -->
+<!-- ===================== -->
+<div id="flowers"></div>
 
-        <div class="sparkles"></div>
+<!-- ===================== -->
+<!-- PAGE 1 -->
+<!-- ===================== -->
+<section class="page active" id="page1">
+
+    <div class="content">
+
+        <h1>Buat <br> Mbak KiwKiw 💗</h1>
+
+        <div class="button-group">
+
+            <button id="next1" class="btn pink">
+                Next
+            </button>
+
+            <button id="noBtn" class="btn white">
+                No
+            </button>
+
+        </div>
+
     </div>
 
-    <!-- ================= PAGE 1 ================= -->
+</section>
 
-    <section class="page active" id="page1">
+<!-- ===================== -->
+<!-- PAGE 2 -->
+<!-- ===================== -->
 
-        <h1>Buat Mbak Kikiw 🌸</h1>
+<section class="page" id="page2">
 
-        <p>
-            Aku punya sesuatu buat kamu...
-        </p>
+    <div class="content">
 
-        <button id="next1">
-            Lihat ➜
-        </button>
+        <div id="cryEmoji">
+            🥹
+        </div>
 
-    </section>
+        <div id="water"></div>
 
+        <div class="typing">
 
-    <!-- ================= PAGE 2 ================= -->
+            <p class="line">
+                Ciyee yang mau pindah kos
+            </p>
 
-    <section class="page" id="page2">
+            <p class="line">
+                dan ninggalin aku,
+            </p>
 
-        <h2>🌸 Ini buat kamu</h2>
+            <p class="line">
+                pasti nanti kamu
+            </p>
 
-        <p>
-            Biar nggak lupa sama aku...
-        </p>
-
-        <div id="garden">
-
-            <!-- bunga akan dibuat JS -->
+            <p class="line">
+                kangen sama aku 💕
+            </p>
 
         </div>
 
-        <button id="next2">
-
-            Next ➜
-
+        <button class="btn pink" id="next2">
+            Next
         </button>
 
-    </section>
+    </div>
 
+</section>
 
+<!-- ===================== -->
+<!-- PAGE 3 -->
+<!-- ===================== -->
 
-    <!-- ================= PAGE 3 ================= -->
+<section class="page" id="page3">
 
-    <section class="page" id="page3">
+    <div class="content">
 
-        <h2>Pesan kecil 💬</h2>
+        <h2>
+            Ini ada sesuatu buat kamu 💌
+        </h2>
 
-        <div class="chat">
+        <div id="envelope">
 
-            <div class="bubble">
-                nanti jangan lupain aku ya 🤍
-            </div>
+            <div class="cover"></div>
 
-            <div class="bubble">
-                kalau gabut chat aku aja
-            </div>
+            <div class="letter">
 
-            <div class="bubble">
-                main lagi kalau sempet
-            </div>
+                <img
+                    src="https://images.unsplash.com/photo-1561181286-d3fee7d55364?w=600"
+                    id="bouquet"
+                    alt="Bouquet">
 
-            <div class="bubble">
-                tetap jadi partner ghibah ya 😂
-            </div>
-
-            <div class="bubble">
-                makasih udah jadi teman yang baik 🌸
             </div>
 
         </div>
 
-        <button id="next3">
+        <div id="message">
 
-            Next ➜
+            <h3>
+                Kangenin aku terus ya 💗
+            </h3>
 
-        </button>
+            <p class="msg">Baik-baik di sana.</p>
 
-    </section>
+            <p class="msg">Jangan lupa ghibah sama aku.</p>
 
+            <p class="msg">Sering-sering kabarin.</p>
 
+            <p class="msg">Sering-sering main.</p>
 
-    <!-- ================= PAGE 4 ================= -->
-
-    <section class="page" id="page4">
-
-        <div class="flower-rain"></div>
-
-        <h1>🥺</h1>
-
-        <h2>Kita pisah rumah...</h2>
-
-        <p>
-
-            Semoga betah di tempat baru ya.<br>
-
-            Jangan lupa istirahat.<br>
-
-            Jangan lupa makan.<br>
-
-            Dan... jangan lupa aku.
-
-        </p>
-
-        <button id="next4">
-
-            Ada satu lagi buat kamu 🌸
-
-        </button>
-
-    </section>
-
-
-
-    <!-- ================= PAGE 5 ================= -->
-
-    <section class="page" id="page5">
-
-        <h2>Untuk Mbak Kikiw 💐</h2>
-
-        <p class="subtitle">
-
-            Tunggu sebentar ya...
-
-        </p>
-
-        <div id="bouquet">
-
-            <!-- batang -->
-            <div class="stem stem1"></div>
-            <div class="stem stem2"></div>
-            <div class="stem stem3"></div>
-            <div class="stem stem4"></div>
-            <div class="stem stem5"></div>
-
-            <!-- daun -->
-            <div class="leaf leaf1"></div>
-            <div class="leaf leaf2"></div>
-            <div class="leaf leaf3"></div>
-            <div class="leaf leaf4"></div>
-
-            <!-- bunga -->
-            <div class="flower flower1"></div>
-            <div class="flower flower2"></div>
-            <div class="flower flower3"></div>
-            <div class="flower flower4"></div>
-            <div class="flower flower5"></div>
-
-            <!-- pita -->
-            <div class="ribbon"></div>
+            <p class="msg">Bahagia terus Mbak KiwKiw 🌸</p>
 
         </div>
 
-        <p id="ending">
+        <button class="btn pink" id="next3">
+            Next
+        </button>
 
-            Biar bunga ini yang nemenin kamu kalau lagi kangen sama aku. 🤍
+    </div>
 
-        </p>
+</section>
 
-    </section>
+<!-- ===================== -->
+<!-- PAGE 4 -->
+<!-- ===================== -->
 
-    <script src="script.js"></script>
+<section class="page" id="page4">
+
+    <div class="content">
+
+        <div class="cats">
+
+            <div class="cat cat1">
+                🐈
+            </div>
+
+            <div class="cat cat2">
+                🐈
+            </div>
+
+        </div>
+
+        <h2>
+            Aku nyusul nanti 🤍
+        </h2>
+
+        <button class="btn pink" id="next4">
+            Next
+        </button>
+
+    </div>
+
+</section>
+
+<!-- ===================== -->
+<!-- PAGE 5 -->
+<!-- ===================== -->
+
+<section class="page" id="page5">
+
+    <div id="petals"></div>
+
+    <div class="content">
+
+        <h1 class="see">
+            See You 🌸
+        </h1>
+
+    </div>
+
+</section>
+
+<!-- ===================== -->
+<!-- Audio -->
+<!-- ===================== -->
+
+<audio id="bgm" loop>
+    <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<!-- JS -->
+<script src="script.js"></script>
 
 </body>
-
 </html>
-```
