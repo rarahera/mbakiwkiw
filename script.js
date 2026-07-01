@@ -1,214 +1,125 @@
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Poppins',sans-serif;
+const pages = document.querySelectorAll(".page");
+
+function showPage(id){
+    pages.forEach(page=>page.classList.remove("active"));
+    document.getElementById(id).classList.add("active");
 }
 
-body{
-    overflow:hidden;
-    background:#ffeaf4;
+// ======================
+// PAGE 1
+// ======================
+
+const next1 = document.getElementById("next1");
+const noBtn = document.getElementById("noBtn");
+
+next1.addEventListener("click", ()=>{
+    showPage("page2");
+    startCry();
+});
+
+noBtn.addEventListener("mouseover", ()=>{
+    const w = window.innerWidth - 120;
+    const h = window.innerHeight - 80;
+
+    noBtn.style.position = "fixed";
+    noBtn.style.left = Math.random() * w + "px";
+    noBtn.style.top = Math.random() * h + "px";
+});
+
+// Opsional: Reset posisi saat mouse keluar
+noBtn.addEventListener("mouseout", ()=>{
+    noBtn.style.position = "static";
+});
+
+
+// ======================
+// PAGE 2
+// ======================
+
+function startCry(){
+    const emoji = document.getElementById("emoji");
+    const water = document.getElementById("water");
+    const text = document.querySelectorAll("#text2 p");
+
+    setTimeout(()=>emoji.innerHTML="😭", 1000);
+    setTimeout(()=>emoji.innerHTML="😭😭", 2000);
+    setTimeout(()=>water.style.height="45%", 2500);
+
+    text.forEach((p, i)=>{
+        setTimeout(()=>{
+            p.style.opacity = "1";
+        }, i * 1000);
+    });
 }
 
-.page{
-    width:100%;
-    height:100vh;
-    display:none;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    padding:20px;
-    position:relative;
-    background:linear-gradient(180deg,#ffeaf4,#ffd6e8);
-}
+const next2 = document.getElementById("next2");
+next2.addEventListener("click", ()=>{
+    showPage("page3");
+});
 
-.page.active{
-    display:flex;
-}
 
-h1{
-    font-family:'Pacifico',cursive;
-    font-size:60px;
-    color:#ff4f8b;
-    margin-bottom:40px;
-}
+// ======================
+// PAGE 3
+// ======================
 
-h2{
-    color:#ff4f8b;
-    margin-bottom:25px;
-}
+const envelope = document.getElementById("envelope");
+const gift = document.getElementById("gift");
+const msgs = document.querySelectorAll(".msg");
 
-h3{
-    color:#ff4f8b;
-    margin:20px 0;
-}
+envelope.addEventListener("click", ()=>{
+    envelope.style.display = "none";
+    gift.style.display = "block";
 
-button{
-    padding:12px 28px;
-    border:none;
-    border-radius:30px;
-    cursor:pointer;
-    margin:15px;
-    font-size:18px;
-    background:#ff79a8;
-    color:white;
-    transition:.3s;
-}
+    msgs.forEach((m, i)=>{
+        setTimeout(()=>{
+            m.style.display = "block";
+        }, i * 1000);
+    });
+});
 
-button:hover{
-    transform:scale(1.05);
-}
+const next3 = document.getElementById("next3");
+next3.addEventListener("click", ()=>{
+    showPage("page4");
+});
 
-.buttons{
-    width:320px;
-    height:100px;
-    position:relative;
-}
 
-#next1{
-    position:absolute;
-    left:20px;
-}
+// ======================
+// PAGE 4
+// ======================
 
-#noBtn{
-    position:absolute;
-    right:20px;
-    background:white;
-    color:#ff4f8b;
-}
+const next4 = document.getElementById("next4");
+next4.addEventListener("click", ()=>{
+    showPage("page5");
+    flowerRain();
+});
 
-#emoji{
-    font-size:90px;
-    margin-bottom:20px;
-}
 
-#water{
-    position:absolute;
-    bottom:0;
-    left:0;
-    width:100%;
-    height:0;
-    background:#8ed7ff;
-    transition:4s;
-}
+// ======================
+// PAGE 5
+// ======================
 
-#text2{
-    position:relative;
-    z-index:2;
-}
+let flowerInterval = null;
 
-#text2 p{
-    margin:12px;
-    font-size:24px;
-    opacity:0;
-}
+function flowerRain(){
+    const area = document.getElementById("flowers");
 
-#envelope{
-    font-size:120px;
-    cursor:pointer;
-    transition:.4s;
-}
+    // Hentikan interval sebelumnya kalau ada
+    if(flowerInterval) clearInterval(flowerInterval);
 
-#envelope:hover{
-    transform:scale(1.1);
-}
+    flowerInterval = setInterval(()=>{
+        const flower = document.createElement("div");
+        flower.className = "flower";
+        flower.innerHTML = "🌸";
+        flower.style.left = Math.random() * 100 + "vw";
+        
+        const duration = Math.random() * 3 + 3;
+        flower.style.animationDuration = duration + "s";
 
-#gift{
-    display:none;
-    animation:fade .8s;
-}
+        area.appendChild(flower);
 
-#gift img{
-    width:220px;
-    border-radius:15px;
-    margin:20px 0;
-}
+        setTimeout(()=>{
+            flower.remove();
+        }, duration * 1000);
 
-.msg{
-    display:none;
-    font-size:22px;
-    margin:10px;
-    color:#ff4f8b;
-}
-
-#cats{
-    font-size:70px;
-    width:300px;
-    display:flex;
-    justify-content:space-between;
-    margin:40px 0;
-    animation:run 1s infinite alternate;
-}
-
-@keyframes run{
-
-from{
-transform:translateX(-30px);
-}
-
-to{
-transform:translateX(30px);
-}
-
-}
-
-#flowers{
-    position:absolute;
-    inset:0;
-    overflow:hidden;
-    pointer-events:none;
-}
-
-.flower{
-    position:absolute;
-    top:-30px;
-    font-size:24px;
-    animation:fall linear forwards;
-}
-
-@keyframes fall{
-
-from{
-transform:translateY(-20px) rotate(0deg);
-}
-
-to{
-transform:translateY(110vh) rotate(360deg);
-}
-
-}
-
-@keyframes fade{
-
-from{
-opacity:0;
-transform:scale(.8);
-}
-
-to{
-opacity:1;
-transform:scale(1);
-}
-
-}
-
-@media(max-width:768px){
-
-h1{
-font-size:42px;
-}
-
-#gift img{
-width:170px;
-}
-
-#text2 p{
-font-size:18px;
-}
-
-#cats{
-font-size:50px;
-}
-
+    }, 250);
 }
