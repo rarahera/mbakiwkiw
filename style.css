@@ -1,0 +1,214 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    overflow:hidden;
+    background:#ffeaf4;
+}
+
+.page{
+    width:100%;
+    height:100vh;
+    display:none;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:20px;
+    position:relative;
+    background:linear-gradient(180deg,#ffeaf4,#ffd6e8);
+}
+
+.page.active{
+    display:flex;
+}
+
+h1{
+    font-family:'Pacifico',cursive;
+    font-size:60px;
+    color:#ff4f8b;
+    margin-bottom:40px;
+}
+
+h2{
+    color:#ff4f8b;
+    margin-bottom:25px;
+}
+
+h3{
+    color:#ff4f8b;
+    margin:20px 0;
+}
+
+button{
+    padding:12px 28px;
+    border:none;
+    border-radius:30px;
+    cursor:pointer;
+    margin:15px;
+    font-size:18px;
+    background:#ff79a8;
+    color:white;
+    transition:.3s;
+}
+
+button:hover{
+    transform:scale(1.05);
+}
+
+.buttons{
+    width:320px;
+    height:100px;
+    position:relative;
+}
+
+#next1{
+    position:absolute;
+    left:20px;
+}
+
+#noBtn{
+    position:absolute;
+    right:20px;
+    background:white;
+    color:#ff4f8b;
+}
+
+#emoji{
+    font-size:90px;
+    margin-bottom:20px;
+}
+
+#water{
+    position:absolute;
+    bottom:0;
+    left:0;
+    width:100%;
+    height:0;
+    background:#8ed7ff;
+    transition:4s;
+}
+
+#text2{
+    position:relative;
+    z-index:2;
+}
+
+#text2 p{
+    margin:12px;
+    font-size:24px;
+    opacity:0;
+}
+
+#envelope{
+    font-size:120px;
+    cursor:pointer;
+    transition:.4s;
+}
+
+#envelope:hover{
+    transform:scale(1.1);
+}
+
+#gift{
+    display:none;
+    animation:fade .8s;
+}
+
+#gift img{
+    width:220px;
+    border-radius:15px;
+    margin:20px 0;
+}
+
+.msg{
+    display:none;
+    font-size:22px;
+    margin:10px;
+    color:#ff4f8b;
+}
+
+#cats{
+    font-size:70px;
+    width:300px;
+    display:flex;
+    justify-content:space-between;
+    margin:40px 0;
+    animation:run 1s infinite alternate;
+}
+
+@keyframes run{
+
+from{
+transform:translateX(-30px);
+}
+
+to{
+transform:translateX(30px);
+}
+
+}
+
+#flowers{
+    position:absolute;
+    inset:0;
+    overflow:hidden;
+    pointer-events:none;
+}
+
+.flower{
+    position:absolute;
+    top:-30px;
+    font-size:24px;
+    animation:fall linear forwards;
+}
+
+@keyframes fall{
+
+from{
+transform:translateY(-20px) rotate(0deg);
+}
+
+to{
+transform:translateY(110vh) rotate(360deg);
+}
+
+}
+
+@keyframes fade{
+
+from{
+opacity:0;
+transform:scale(.8);
+}
+
+to{
+opacity:1;
+transform:scale(1);
+}
+
+}
+
+@media(max-width:768px){
+
+h1{
+font-size:42px;
+}
+
+#gift img{
+width:170px;
+}
+
+#text2 p{
+font-size:18px;
+}
+
+#cats{
+font-size:50px;
+}
+
+}
